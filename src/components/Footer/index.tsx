@@ -12,7 +12,7 @@ const Footer = (): ReactElement => {
                         © Copyright 2022 HubX - Shaping the future through elegantly designed mobile apps
                     </div>
                     <div className="logo">
-                        <img src="/public/assets/images/hubx-case-logo.svg" alt="HUBX Case" />
+                        <img src="/assets/images/hubx-case-logo.svg" alt="HUBX Case" />
                     </div>
                 </footer>
             </Container>

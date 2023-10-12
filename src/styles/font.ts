@@ -31,9 +31,9 @@ export const fontFaces = css`
     @font-face {
         font-family: 'Helvetica Now Display';
         src: local('Helvetica Now Display Medium'), local('Helvetica-Now-Display-Medium'),
-            url('/public/assets/fonts/HelveticaNowDisplay-Medium.woff2') format('woff2'),
-            url('/public/assets/fonts/HelveticaNowDisplay-Medium.woff') format('woff'),
-            url('/public/assets/fonts/HelveticaNowDisplay-Medium.ttf') format('truetype');
+            url('/assets/fonts/HelveticaNowDisplay-Medium.woff2') format('woff2'),
+            url('/assets/fonts/HelveticaNowDisplay-Medium.woff') format('woff'),
+            url('/assets/fonts/HelveticaNowDisplay-Medium.ttf') format('truetype');
         font-weight: 500;
         font-style: normal;
     }
