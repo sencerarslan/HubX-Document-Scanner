@@ -15,13 +15,12 @@ const Header = (): ReactElement => {
                         <div className="header-section">
                             <div className="header-section-subtitle">Inspect</div>
                             <div className="header-section-title">
-                                State{' '}
+                                State
                                 <span className="count" key={activeTab}>
-                                    {activeTab
-                                        .padStart(2, '0')
+                                    {`${activeTab.padStart(2, '0')}`
                                         .split('')
                                         .map(function (char: string, index: number) {
-                                            const style = { animationDelay: 0.2 + index / 10 + 's' };
+                                            const style = { animationDelay: 0.3 + index / 10 + 's' };
                                             return (
                                                 <span aria-hidden="true" key={index} style={style}>
                                                     {char}

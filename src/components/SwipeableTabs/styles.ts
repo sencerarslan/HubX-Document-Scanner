@@ -6,8 +6,11 @@ export const Tablet = css`
         position: fixed;
         bottom: 0;
         .swiper-slide {
-            &:not(.active):hover {
-                border-color: transparent;
+            &:hover {
+                border-color: transparent !important;
+            }
+            .slide-button {
+                padding: 20px 30px;
             }
         }
     }
@@ -20,13 +23,13 @@ export const SwipeableTabsStyled = styled.div`
     background-color: #fff;
     .swiper-content {
         flex: 1;
-        padding: 30px;
         background-color: #fbfcfc;
     }
     .swiper {
         max-width: 100%;
         width: fit-content;
         margin: auto;
+        background: #fff;
 
         .swiper-slide {
             background: #fff;
@@ -47,7 +50,7 @@ export const SwipeableTabsStyled = styled.div`
                 align-items: center;
                 gap: 16px;
                 user-select: none;
-                border: 2px solid transparent;
+                border: 4px solid transparent;
                 transition: border-color 0.4s;
 
                 &:not(.active):hover {

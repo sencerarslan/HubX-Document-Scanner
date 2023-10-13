@@ -1,4 +1,4 @@
-import { ReactElement, useEffect, useState } from 'react';
+import { ReactElement, useCallback, useEffect, useState } from 'react';
 import { SwipeableTabsStyled } from './styles';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { useDispatch } from 'react-redux';
@@ -22,13 +22,19 @@ const SwipeableTabs = ({ data }: SwipeableTabsProps): ReactElement => {
     const [activeTab, setActiveTab] = useState<number>(0);
     const dispatch = useDispatch();
 
+    const handleClick = (index: number) => {
+        setActiveTab(index);
+        const audio = new Audio('/assets/sound/click.mp3');
+        audio.play();
+    };
+
     useEffect(() => {
         dispatch(tabState(String(activeTab + 1)));
     }, [activeTab]);
 
     return (
         <SwipeableTabsStyled>
-            <div className="swiper-content">
+            <div className="swiper-content" key={activeTab}>
                 <Container>{data[activeTab].content}</Container>
             </div>
             <Swiper
@@ -49,7 +55,7 @@ const SwipeableTabs = ({ data }: SwipeableTabsProps): ReactElement => {
                         <SwiperSlide key={index}>
                             <div
                                 className={`slide-button ${index === activeTab ? 'active' : ''}`}
-                                onClick={() => setActiveTab(index)}
+                                onClick={() => handleClick(index)}
                             >
                                 <div className="slide-button-icon">
                                     <span>

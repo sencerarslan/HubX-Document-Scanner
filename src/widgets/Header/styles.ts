@@ -31,23 +31,26 @@ export const HeaderStyled = styled.div`
                 font-size: var(--font-title-size);
                 font-weight: 800;
                 .count {
+                    padding-left: 0.2em;
                     span {
                         position: relative;
                         opacity: 0;
-                        animation: move-text 0.4s forwards;
+                        animation: move-text 0.7s forwards;
                     }
 
                     @keyframes move-text {
                         0% {
-                            bottom: -0.2em;
+                            bottom: -0.1em;
                             opacity: 1;
+                            color: var(--primary-color);
                         }
                         50% {
-                            bottom: 0.2em;
+                            bottom: 0.1em;
                         }
                         100% {
                             bottom: 0;
                             opacity: 1;
+                            color: var(--font-title-size);
                         }
                     }
                 }
