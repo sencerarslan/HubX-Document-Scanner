@@ -1,4 +1,13 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+import { mediaQuery } from '../../common/media';
+
+export const Tablet = css`
+    .swiper .swiper-slide {
+        &:not(.active):hover {
+            border-color: transparent;
+        }
+    }
+`;
 
 export const SwipeableTabsStyled = styled.div`
     display: flex;
@@ -112,4 +121,5 @@ export const SwipeableTabsStyled = styled.div`
             }
         }
     }
+    ${mediaQuery.lessThan('tablet')`${Tablet}`}
 `;
