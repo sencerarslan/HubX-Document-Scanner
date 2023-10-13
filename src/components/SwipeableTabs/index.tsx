@@ -52,7 +52,9 @@ const SwipeableTabs = ({ data }: SwipeableTabsProps): ReactElement => {
                                 onClick={() => setActiveTab(index)}
                             >
                                 <div className="slide-button-icon">
-                                    <span>{item.button.icon}</span>
+                                    <span>
+                                        <img src={item.button.icon} alt={item.button.icon} />
+                                    </span>
                                 </div>
                                 <div className="slide-button-text">{item.button.title}</div>
                             </div>

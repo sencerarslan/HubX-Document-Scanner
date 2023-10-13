@@ -2,9 +2,13 @@ import styled, { css } from 'styled-components';
 import { mediaQuery } from '../../common/media';
 
 export const Tablet = css`
-    .swiper .swiper-slide {
-        &:not(.active):hover {
-            border-color: transparent;
+    .swiper {
+        position: fixed;
+        bottom: 0;
+        .swiper-slide {
+            &:not(.active):hover {
+                border-color: transparent;
+            }
         }
     }
 `;
@@ -51,28 +55,23 @@ export const SwipeableTabsStyled = styled.div`
                 }
 
                 &-icon {
+                    width: 56px;
+                    height: 56px;
+                    position: relative;
+                    img {
+                        filter: grayscale(1);
+                        opacity: 0.8;
+                        transition: filter 0.4s;
+                    }
                     @property --pgPercentage {
                         syntax: '<number>';
                         inherits: false;
                         initial-value: 100;
                     }
-                    @keyframes growProgressBar {
-                        0%,
-                        33% {
-                            --pgPercentage: 100;
-                        }
-                        100% {
-                            --pgPercentage: 0;
-                        }
-                    }
-
-                    width: 56px;
-                    height: 56px;
-                    position: relative;
                     & > span {
                         position: absolute;
                         border-radius: 100%;
-                        border: solid 1px rgb(0 0 0 / 8%);
+                        border: solid 1px transparent;
                         width: 100%;
                         height: 100%;
                         display: flex;
@@ -100,6 +99,14 @@ export const SwipeableTabsStyled = styled.div`
                             var(--primary-color) 0%
                         );
                     }
+                    @keyframes growProgressBar {
+                        0% {
+                            --pgPercentage: 100;
+                        }
+                        100% {
+                            --pgPercentage: 0;
+                        }
+                    }
                 }
 
                 &-text {
@@ -112,7 +119,10 @@ export const SwipeableTabsStyled = styled.div`
                 &.active {
                     background-color: rgb(3 129 255 / 3%);
                     .slide-button-icon {
-                        color: var(--primary-color);
+                        img {
+                            filter: grayscale(0);
+                            opacity: 1;
+                        }
                         &::before {
                             animation: growProgressBar 1s forwards;
                         }
