@@ -1,8 +1,7 @@
-import Container from '../../components/Container';
-import Footer from '../../components/Footer';
-import Header from '../../components/Header';
-import DocumentScannerSlide from '../../widgets/DocumentScannerSlide';
 import { HomePageStyled } from './styles';
+import Header from '../../widgets/Header';
+import DocumentScannerSlide from '../../widgets/DocumentScannerSlide';
+import Footer from '../../widgets/Footer';
 
 const HomePage = () => {
     return (

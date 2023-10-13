@@ -1,6 +1,6 @@
 import { ReactElement } from 'react';
 import { FooterStyled } from './styles';
-import Container from '../Container';
+import Container from '../../components/Container';
 // import logo from '../assets/logo.svg';
 
 const Footer = (): ReactElement => {

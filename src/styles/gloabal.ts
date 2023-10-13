@@ -7,6 +7,7 @@ const GlobalStyles = createGlobalStyle`
         --bg-color: #F5F5F7;
         --text-color: #000;
         --cursor-color: #000;
+        --primary-color: #0381FF;
     }
     ${fontFaces} 
     * {

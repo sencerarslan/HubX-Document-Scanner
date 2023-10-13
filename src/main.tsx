@@ -6,12 +6,17 @@ import HomePage from './pages/Home';
 import GlobalStyles from './styles/gloabal';
 import CircleCursor from './components/CircleCursor';
 
+import store from './store';
+import { Provider } from 'react-redux';
+
 createRoot(document.getElementById('root') as HTMLElement).render(
     <StrictMode>
-        <BaseLayout>
-            <HomePage />
-        </BaseLayout>
-        <CircleCursor />
-        <GlobalStyles />
+        <Provider store={store}>
+            <BaseLayout>
+                <HomePage />
+            </BaseLayout>
+            <CircleCursor />
+            <GlobalStyles />
+        </Provider>
     </StrictMode>
 );

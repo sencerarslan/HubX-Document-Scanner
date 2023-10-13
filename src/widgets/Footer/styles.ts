@@ -1,4 +1,11 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+import { mediaQuery } from '../../common/media';
+
+export const Tablet = css`
+    .footer {
+        display: none;
+    }
+`;
 
 export const FooterStyled = styled.div`
     .footer {
@@ -16,4 +23,5 @@ export const FooterStyled = styled.div`
             }
         }
     }
+    ${mediaQuery.lessThan('tablet')`${Tablet}`}
 `;

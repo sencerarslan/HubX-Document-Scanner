@@ -1,9 +1,12 @@
-import { ReactElement } from 'react';
+import { ReactElement, useEffect, useState } from 'react';
 import { SwipeableTabsStyled } from './styles';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { useDispatch } from 'react-redux';
 import 'swiper/css';
+import { tabState } from '../../store/reducers/dataSlice';
+import Container from '../Container';
 
-interface DataProps {
+export interface DataProps {
     button: {
         icon: string;
         title: string;
@@ -16,8 +19,18 @@ interface SwipeableTabsProps {
 }
 
 const SwipeableTabs = ({ data }: SwipeableTabsProps): ReactElement => {
+    const [activeTab, setActiveTab] = useState<number>(0);
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(tabState(String(activeTab + 1)));
+    }, [activeTab]);
+
     return (
         <SwipeableTabsStyled>
+            <div className="swiper-content">
+                <Container>{data[activeTab].content}</Container>
+            </div>
             <Swiper
                 slidesPerView="auto"
                 spaceBetween={0}
@@ -34,8 +47,13 @@ const SwipeableTabs = ({ data }: SwipeableTabsProps): ReactElement => {
                 {data.map((item: DataProps, index: number) => {
                     return (
                         <SwiperSlide key={index}>
-                            <div className="slide-button">
-                                <div className="slide-button-icon">{item.button.icon}</div>
+                            <div
+                                className={`slide-button ${index === activeTab ? 'active' : ''}`}
+                                onClick={() => setActiveTab(index)}
+                            >
+                                <div className="slide-button-icon">
+                                    <span>{item.button.icon}</span>
+                                </div>
                                 <div className="slide-button-text">{item.button.title}</div>
                             </div>
                         </SwiperSlide>
