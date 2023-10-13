@@ -66,9 +66,9 @@ const CircleCursor: React.FC = () => {
         return () => {
             removeEventListeners();
         };
-    }, []); // useEffect sadece bir kere çalışsın
+    }, []);
 
-    if (isMobile) return null; // Mobil cihazlarda gösterme
+    if (isMobile) return null;
 
     const cursorClasses: string = classNames('cursor', {
         'cursor--clicked': clicked,

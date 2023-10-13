@@ -10,6 +10,7 @@ export const HeaderStyled = styled.div`
             flex: 1;
         }
         &-right {
+            padding-right: 60px;
         }
         &-section {
             display: flex;

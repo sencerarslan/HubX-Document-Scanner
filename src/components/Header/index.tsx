@@ -1,8 +1,7 @@
 import { ReactElement } from 'react';
 import { HeaderStyled } from './styles';
 import MagicalButton from '../MagicalButton';
-import Container from '../Container'; 
-// import logo from '../assets/logo.svg';
+import Container from '../Container';
 
 const Header = (): ReactElement => {
     return (
@@ -17,7 +16,7 @@ const Header = (): ReactElement => {
                     </div>
                     <div className="header-right">
                         <MagicalButton text="hubx.co" url="https://hubx.co" target="_blank" />
-                    </div> 
+                    </div>
                 </header>
             </Container>
         </HeaderStyled>
