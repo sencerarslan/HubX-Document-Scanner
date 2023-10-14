@@ -22,7 +22,7 @@ const MagicalButton = ({ text, url, target = '_self' }: MagicalButtonProps): Rea
     };
     return (
         <MagicalButtonStyled>
-            <button onClick={() => handleClick} className="pushable">
+            <button onClick={() => void handleClick()} className="pushable">
                 <span className="shadow"></span>
                 <span className="edge"></span>
                 <span className="front">{text}</span>
