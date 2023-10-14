@@ -56,11 +56,11 @@ export const SwipeableTabsStyled = styled.div`
             }
 
             .slide-button {
-                padding: 30px 50px;
+                padding: 30px 40px;
                 display: flex;
                 flex-direction: row;
                 align-items: center;
-                gap: 16px;
+                gap: 14px;
                 user-select: none;
                 border: 4px solid transparent;
                 transition: border-color 0.4s;

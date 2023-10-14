@@ -57,6 +57,9 @@ export const XLTabletCardStyled = css`
                 margin-top: -250px;
             }
         }
+        .content {
+            padding-left: 0;
+        }
     }
 `;
 
@@ -68,21 +71,22 @@ export const CardStyled = styled.div`
         min-height: 400px;
         width: 100%;
         overflow: hidden;
+        max-width: 1230px;
         .left {
             flex: 1;
             position: relative;
-            max-width: 600px;
             width: 100%;
-            height: 600px;
+            height: 614px;
             margin: auto;
             display: flex;
             justify-content: center;
         }
         .right {
             text-align: right;
-            max-width: 570px;
+            max-width: 606px;
             animation: fadeIn 1s ease-in-out reverse forwards;
             opacity: 0;
+            padding-top: 45px;
         }
         .sub-title {
             color: var(--primary-color);
@@ -105,6 +109,8 @@ export const CardStyled = styled.div`
             line-height: 32px;
             letter-spacing: 0.8px;
             margin-bottom: 20px;
+            padding-left: 60px;
+            letter-spacing: 0.8px;
         }
         .button {
             display: inline-block;

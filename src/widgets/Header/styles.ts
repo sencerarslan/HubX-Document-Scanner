@@ -8,7 +8,7 @@ export const Tablet = css`
 `;
 export const HeaderStyled = styled.div`
     .header {
-        padding: 72px 0 100px 0;
+        padding: 80px 0 100px 0;
         display: flex;
         justify-content: space-between;
         align-items: flex-end;
@@ -31,7 +31,7 @@ export const HeaderStyled = styled.div`
                 font-size: var(--font-title-size);
                 font-weight: 800;
                 .count {
-                    padding-left: 0.2em;
+                    padding-left: 0.4em;
                     span {
                         position: relative;
                         opacity: 0;
