@@ -38,6 +38,26 @@ const DocumentScannerSlide = (): ReactElement => {
                                     <img src="/assets/images/file-document.png" alt="document 3" />
                                 </div>
                             )}
+                            {activeTab === '4' && (
+                                <div className="document">
+                                    <img src="/assets/images/file-document.png" alt="document 1" />
+                                    <img src="/assets/images/file-document.png" alt="document 2" />
+                                    <div className="filter filter-1">
+                                        <span className="dot"></span>
+                                    </div>
+                                    <div className="filter filter-2">
+                                        <span className="dot"></span>
+                                    </div>
+                                </div>
+                            )}
+                            {activeTab === '5' && (
+                                <div className="export">
+                                    <img src="/assets/images/export-icon.svg" alt="export icon" />
+                                    <img src="/assets/images/export-pdf.png" alt="export pdf" />
+                                    <img src="/assets/images/export-jpg.png" alt="export jpg" />
+                                    <img src="/assets/images/export-txt.png" alt="export txt" />
+                                </div>
+                            )}
 
                             <img src="/assets/images/iphone-frame.svg" className="frame" alt="iphone" />
                             <img src={item.screenshot} className="screenshot" alt="screenshot" />

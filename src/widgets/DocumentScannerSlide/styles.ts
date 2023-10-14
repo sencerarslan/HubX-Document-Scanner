@@ -1,6 +1,25 @@
 import styled, { css } from 'styled-components';
 import { mediaQuery } from '../../common/media';
-
+export const Mobile = css`
+    & > * {
+        min-height: 100vh;
+    }
+    .card {
+        .right {
+            min-height: 0;
+            padding-bottom: 30px;
+        }
+        .left {
+            margin-top: -100px;
+            width: 100%;
+            transform: scale(0.66);
+            transform-origin: bottom center;
+            .mobile {
+                bottom: -170px;
+            }
+        }
+    }
+`;
 export const Tablet = css`
     & > * {
         min-height: 100vh;
@@ -11,8 +30,8 @@ export const XLTabletCardStyled = css`
         flex-direction: column-reverse;
         .right {
             text-align: center;
-            padding: 60px 0;
-            min-height: 450px;
+            padding: 60px 30px;
+            min-height: 400px;
         }
         .left {
             height: auto;
@@ -32,9 +51,9 @@ export const CardStyled = styled.div`
         justify-content: space-between;
         min-height: 400px;
         width: 100%;
+        overflow: hidden;
         .left {
             flex: 1;
-            overflow: hidden;
             position: relative;
             max-width: 600px;
             width: 100%;
@@ -305,6 +324,186 @@ export const CardStyled = styled.div`
             }
         }
     }
+    .mobile.active-tab-4 {
+        .document {
+            position: absolute;
+            z-index: 3;
+            bottom: 200px;
+            left: -22px;
+            right: 0;
+            margin: auto;
+            width: 290px;
+            height: 410px;
+            & > img {
+                position: absolute;
+                left: 0;
+                right: 0;
+                margin: auto;
+                top: 0px;
+                transform-origin: top;
+                &:nth-child(1) {
+                    z-index: 2;
+                    animation: document-animation-1 4.5s 0.6s ease-in-out infinite reverse;
+                }
+                &:nth-child(2) {
+                    z-index: 1;
+                    left: 300px;
+                    position: absolute;
+                    top: 10px;
+                    overflow: hidden;
+                    width: 25px;
+                    object-position: left;
+                    object-fit: none;
+                    height: 100%;
+                }
+            }
+            .filter {
+                background-size: 100%;
+                width: 43px;
+                height: 360px;
+                position: absolute;
+                background-color: rgb(138 138 138 / 80%);
+                backdrop-filter: blur(38px);
+                border-radius: 15px;
+                overflow: hidden;
+                opacity: 0;
+                &:before {
+                    content: '';
+                    width: 3px;
+                    height: calc(100% - 120px);
+                    z-index: 5;
+                    position: absolute;
+                    left: 0;
+                    right: 0;
+                    top: 0;
+                    bottom: 0;
+                    margin: 60px auto;
+                    background-color: #fff;
+                }
+                .dot {
+                    width: 3px;
+                    height: 13px;
+                    z-index: 5;
+                    position: absolute;
+                    left: 0;
+                    right: 0;
+                    bottom: 60px;
+                    margin: 0 auto;
+                    background-color: var(--primary-color);
+                    &::after {
+                        content: '';
+                        width: 30px;
+                        height: 30px;
+                        z-index: 5;
+                        border-radius: 100%;
+                        position: absolute;
+                        left: -13px;
+                        right: 0;
+                        top: -13px;
+                        margin: auto;
+                        background-color: #fff;
+                    }
+                }
+            }
+            .filter-1 {
+                background-image: url(/assets/images/filter-bar-1.svg);
+                z-index: 4;
+                top: -32px;
+                left: -54px;
+                animation: fadeIn 1s ease-in-out 0.7s reverse forwards;
+                .dot {
+                    height: calc(60% - 60px);
+                    animation: filter-animation-1 4.5s 0.6s ease-in-out infinite reverse;
+                }
+            }
+            .filter-2 {
+                background-image: url(/assets/images/filter-bar-2.svg);
+                z-index: 4;
+                top: -32px;
+                right: -70px;
+                animation: fadeIn 1s ease-in-out 0.9s reverse forwards;
+            }
+            @keyframes filter-animation-1 {
+                0%,
+                10% {
+                    height: calc(60% - 60px);
+                }
+                40%,
+                50% {
+                    height: calc(40% - 60px);
+                }
+                90%,
+                100% {
+                    height: calc(60% - 60px);
+                }
+            }
+            @keyframes document-animation-1 {
+                0%,
+                10% {
+                    filter: brightness(1.5);
+                }
+                40%,
+                50% {
+                    filter: brightness(0.7);
+                }
+                90%,
+                100% {
+                    filter: brightness(1.5);
+                }
+            }
+        }
+    }
+    .mobile.active-tab-5 {
+        .export {
+            position: absolute;
+            margin: auto;
+            left: -30px;
+            right: 0;
+            bottom: 20px;
+            top: 0;
+            height: 180px;
+            width: 430px;
+            z-index: 6;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            img {
+                position: relative;
+                opacity: 0;
+                transform: scale(0);
+                transform-origin: bottom right;
+            }
+            img:first-child {
+                bottom: -15px;
+                right: -20px;
+                animation: export 0.4s 1.4s ease-in-out forwards reverse;
+            }
+            img:nth-child(2) {
+                animation: export 0.4s 1.6s ease-in-out forwards reverse;
+                bottom: -22px;
+            }
+            img:nth-child(3) {
+                left: -20px;
+                bottom: 20px;
+                animation: export 0.4s 1.8s ease-in-out forwards reverse;
+            }
+            img:nth-child(4) {
+                left: -30px;
+                bottom: -22px;
+                animation: export 0.4s 2s ease-in-out forwards reverse;
+            }
+            @keyframes export {
+                0% {
+                    opacity: 1;
+                    transform: scale(1);
+                }
+                100% {
+                    opacity: 0;
+                    transform: scale(0);
+                }
+            }
+        }
+    }
     @keyframes mobile-animation {
         0% {
             filter: brightness(1);
@@ -336,6 +535,7 @@ export const CardStyled = styled.div`
     }
 
     ${mediaQuery.lessThan('xltablet')`${XLTabletCardStyled}`}
+    ${mediaQuery.lessThan('mobile')`${Mobile}`}
 `;
 
 export const DocumentScannerSlideStyled = styled.div`

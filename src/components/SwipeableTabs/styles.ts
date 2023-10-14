@@ -1,6 +1,11 @@
 import styled, { css } from 'styled-components';
 import { mediaQuery } from '../../common/media';
 
+export const Mobile = css`
+    .swiper-content > div {
+        padding: 0;
+    }
+`;
 export const Tablet = css`
     .swiper {
         position: fixed;
@@ -135,4 +140,5 @@ export const SwipeableTabsStyled = styled.div`
         }
     }
     ${mediaQuery.lessThan('tablet')`${Tablet}`}
+    ${mediaQuery.lessThan('mobile')`${Mobile}`}
 `;
