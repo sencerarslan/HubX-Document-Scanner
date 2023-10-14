@@ -2,8 +2,14 @@ import styled, { css } from 'styled-components';
 import { mediaQuery } from '../../common/media';
 
 export const Mobile = css`
-    .swiper-content > div {
-        padding: 0;
+    .swiper-content {
+        display: flex;
+        align-items: stretch;
+        & > div {
+            padding: 0;
+            display: flex;
+            align-items: stretch;
+        }
     }
 `;
 export const Tablet = css`
@@ -11,11 +17,12 @@ export const Tablet = css`
         position: fixed;
         bottom: 0;
         .swiper-slide {
-            &:hover {
-                border-color: transparent !important;
-            }
             .slide-button {
                 padding: 20px 30px;
+
+                &:not(.active):hover {
+                    border-color: transparent !important;
+                }
             }
         }
     }

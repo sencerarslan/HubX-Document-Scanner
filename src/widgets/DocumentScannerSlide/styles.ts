@@ -3,17 +3,35 @@ import { mediaQuery } from '../../common/media';
 export const Mobile = css`
     & > * {
         min-height: 100vh;
+        display: flex;
+        align-items: stretch;
     }
     .card {
+        height: 100%;
         .right {
             min-height: 0;
-            padding-bottom: 30px;
+            padding: 30px;
+            flex: 1;
+            .sub-title {
+            }
+            .title {
+                margin-bottom: 13px;
+            }
+            .content {
+                font-size: 14px;
+                line-height: 28px;
+            }
+            .button {
+                font-size: 14px;
+                padding: 10px 15px;
+            }
         }
         .left {
-            margin-top: -100px;
+            margin-top: -150px;
             width: 100%;
-            transform: scale(0.66);
+            transform: scale(0.6);
             transform-origin: bottom center;
+            margin-bottom: 100px;
             .mobile {
                 bottom: -170px;
             }
