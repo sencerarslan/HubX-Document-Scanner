@@ -1,6 +1,6 @@
-import { ReactElement, useCallback, useEffect, useState } from 'react';
+import { ReactElement, useCallback, useEffect, useRef, useState } from 'react';
 import { SwipeableTabsStyled } from './styles';
-import { Swiper, SwiperSlide } from 'swiper/react';
+import { Swiper, SwiperProps, SwiperRef, SwiperSlide } from 'swiper/react';
 import { useDispatch } from 'react-redux';
 import 'swiper/css';
 import { tabState } from '../../store/reducers/dataSlice';
@@ -19,13 +19,18 @@ interface SwipeableTabsProps {
 }
 
 const SwipeableTabs = ({ data }: SwipeableTabsProps): ReactElement => {
+    const swiperRef = useRef<SwiperRef>(null);
     const [activeTab, setActiveTab] = useState<number>(0);
     const dispatch = useDispatch();
 
     const handleClick = (index: number) => {
-        setActiveTab(index);
-        const audio = new Audio('/assets/sound/click.mp3');
-        audio.play();
+        if (swiperRef.current && swiperRef.current.swiper) {
+            swiperRef.current.swiper.slideTo(index);
+
+            setActiveTab(index);
+            const audio = new Audio('/assets/sound/click.mp3');
+            audio.play();
+        }
     };
 
     useEffect(() => {
@@ -38,6 +43,7 @@ const SwipeableTabs = ({ data }: SwipeableTabsProps): ReactElement => {
                 <Container>{data[activeTab].content}</Container>
             </div>
             <Swiper
+                ref={swiperRef}
                 slidesPerView="auto"
                 spaceBetween={0}
                 centeredSlides={true}
