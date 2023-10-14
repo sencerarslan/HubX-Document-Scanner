@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react';
 import { generateMedia } from 'styled-media-query';
 
 export enum MediaScreenTypes {

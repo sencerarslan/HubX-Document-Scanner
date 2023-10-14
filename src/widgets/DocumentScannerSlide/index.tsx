@@ -12,7 +12,8 @@ interface CardProps {
 }
 
 const DocumentScannerSlide = (): ReactElement => {
-    const activeTab = useSelector((state: any) => state.tabControl);
+    const activeTab: string = useSelector((state: { tabControl: string }) => state.tabControl);
+
     const url = 'https://hubx.co';
     const Card = (item: CardProps) => {
         return (
@@ -67,7 +68,7 @@ const DocumentScannerSlide = (): ReactElement => {
                         <div className="sub-title">{item.subtitle}</div>
                         <div className="title">{item.title}</div>
                         <div className="content">{item.content}</div>
-                        <a href={item.url} target="_blank" className="button">
+                        <a href={item.url} target="_blank" className="button" rel="noreferrer">
                             Learn More
                         </a>
                     </div>

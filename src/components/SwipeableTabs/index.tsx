@@ -1,6 +1,6 @@
-import { ReactElement, useCallback, useEffect, useRef, useState } from 'react';
+import { ReactElement, useEffect, useRef, useState } from 'react';
 import { SwipeableTabsStyled } from './styles';
-import { Swiper, SwiperProps, SwiperRef, SwiperSlide } from 'swiper/react';
+import { Swiper, SwiperRef, SwiperSlide } from 'swiper/react';
 import { useDispatch } from 'react-redux';
 import 'swiper/css';
 import { tabState } from '../../store/reducers/dataSlice';
@@ -23,19 +23,22 @@ const SwipeableTabs = ({ data }: SwipeableTabsProps): ReactElement => {
     const [activeTab, setActiveTab] = useState<number>(0);
     const dispatch = useDispatch();
 
-    const handleClick = (index: number) => {
+    const playSound = async () => {
+        const audio: HTMLMediaElement = new Audio('/assets/sound/click.mp3');
+        await audio.play();
+    };
+    const handleButtonClick = async (index: number) => {
+        await playSound();
         if (swiperRef.current && swiperRef.current.swiper) {
             swiperRef.current.swiper.slideTo(index);
 
             setActiveTab(index);
-            const audio = new Audio('/assets/sound/click.mp3');
-            audio.play();
         }
     };
 
     useEffect(() => {
         dispatch(tabState(String(activeTab + 1)));
-    }, [activeTab]);
+    }, [activeTab, dispatch]);
 
     return (
         <SwipeableTabsStyled>
@@ -61,7 +64,7 @@ const SwipeableTabs = ({ data }: SwipeableTabsProps): ReactElement => {
                         <SwiperSlide key={index}>
                             <div
                                 className={`slide-button ${index === activeTab ? 'active' : ''}`}
-                                onClick={() => handleClick(index)}
+                                onClick={() => void handleButtonClick(index)}
                             >
                                 <div className="slide-button-icon">
                                     <span>

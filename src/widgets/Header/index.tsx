@@ -5,7 +5,7 @@ import Container from '../../components/Container';
 import MagicalButton from '../../components/MagicalButton';
 
 const Header = (): ReactElement => {
-    const activeTab = useSelector((state: any) => state.tabControl);
+    const activeTab: string = useSelector((state: { tabControl: string }) => state.tabControl);
 
     return (
         <HeaderStyled>

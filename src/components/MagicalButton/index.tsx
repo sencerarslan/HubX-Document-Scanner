@@ -8,9 +8,13 @@ interface MagicalButtonProps {
 }
 
 const MagicalButton = ({ text, url, target = '_self' }: MagicalButtonProps): ReactElement => {
-    const playSound = () => {
-        const audio = new Audio('/assets/sound/blob.mp3');
-        audio.play();
+    const playSound = async () => {
+        const audio: HTMLMediaElement = new Audio('/assets/sound/blob.mp3');
+        await audio.play();
+    };
+
+    const handleClick = async () => {
+        await playSound();
 
         setTimeout(() => {
             window.open(url, target);
@@ -18,7 +22,7 @@ const MagicalButton = ({ text, url, target = '_self' }: MagicalButtonProps): Rea
     };
     return (
         <MagicalButtonStyled>
-            <button onClick={playSound} className="pushable">
+            <button onClick={() => handleClick} className="pushable">
                 <span className="shadow"></span>
                 <span className="edge"></span>
                 <span className="front">{text}</span>
