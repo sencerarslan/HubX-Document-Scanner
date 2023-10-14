@@ -28,7 +28,7 @@ To run the project locally, follow these steps:
 
 1. Clone this repository to your local environment:
 ```sh
-git clone <repo-link>
+git clone https://github.com/sencerarslan/HubX-Document-Scanner.git
 ```
 
 2. Navigate to the project directory:
