@@ -1,32 +1,36 @@
 {
-  "short_name": "HubX",
+  "short_name": "Document Scanner",
   "name": "HubX Document Scanner",
   "description": "HubX Document Scanner is a powerful and fast document scanning application that converts documents into digital format in seconds. Save, edit, and share your documents.",
   "icons": [
     {
       "src": "favicon/32x32.png",
       "type": "image/png",
-      "sizes": "32x32"
+      "sizes": "32x32",
+      "purpose": "any maskable"
     },
     {
       "src": "favicon/16x16.png",
       "type": "image/png",
-      "sizes": "16x16"
+      "sizes": "16x16",
+      "purpose": "any maskable"
     },
     {
       "src": "favicon/192x192.png",
       "type": "image/png",
-      "sizes": "192x192"
+      "sizes": "192x192",
+      "purpose": "any maskable"
     },
     {
       "src": "favicon/512x512.png",
       "type": "image/png",
-      "sizes": "512x512"
+      "sizes": "512x512",
+      "purpose": "any maskable"
     }
   ],
   "wide": true,
   "form_factor": "handheld",
-  "start_url": ".",
+  "start_url": "https://hub-x-document-scanner.vercel.app",
   "dir": "ltr",
   "lang": "en-US",
   "display": "standalone",

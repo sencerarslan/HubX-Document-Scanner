@@ -12,8 +12,6 @@ export const Mobile = css`
             min-height: 0;
             padding: 30px;
             flex: 1;
-            .sub-title {
-            }
             .title {
                 margin-bottom: 13px;
             }
@@ -91,6 +89,7 @@ export const CardStyled = styled.div`
             font-size: 16px;
             font-weight: 800;
             line-height: 40px;
+            letter-spacing: 2px;
             text-transform: uppercase;
         }
         .title {
